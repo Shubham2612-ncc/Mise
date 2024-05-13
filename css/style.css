@@ -1,0 +1,90 @@
+header {
+  background-color: #80aaff;
+
+  > nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    > img {
+      width: 150px;
+      height: 100px;
+      margin-left: -300px;
+      mix-blend-mode: multiply;
+    }
+
+    > ul {
+      display: flex;
+      gap: 50px;
+      list-style-type: none;
+      margin-top: 38px;
+
+      > li > a {
+        text-decoration: none;
+        color: #db3a34;
+        font-weight: 800;
+        font-size: larger;
+      }
+    }
+  }
+}
+
+#loginBtn {
+  width: 130px;
+  height: 50px;
+  padding: 5px;
+  margin: 25px;
+  background-color: darkgrey;
+  color: red;
+  font-weight: 600;
+}
+
+#productPage {
+  display: grid;
+  background-color: #ffffb3;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.card {
+  width: 350px;
+  text-align: center;
+  background-color: #ffffe6;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+
+  > .card-img > img {
+    width: 90px;
+    padding: 20px;
+    mix-blend-mode: multiply;
+  }
+
+  .title {
+    font-size: larger;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  .card-img > img {
+    transform: scale(1.2);
+  }
+
+  .title {
+    color: #f55e5e;
+  }
+}
+
+.productText {
+  color: #ffca80;
+}
