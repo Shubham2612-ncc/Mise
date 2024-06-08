@@ -7,9 +7,11 @@ header {
 
     > img {
       width: 150px;
-      height: 100px;
-      margin-left: -300px;
+      height: 90px;
+      margin-left: -250px;
+      margin-top: 5px;
       mix-blend-mode: multiply;
+      border-radius: 10px;
     }
 
     > ul {
@@ -43,15 +45,17 @@ header {
   background-color: #ffffb3;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  padding: 10px;
 }
 
 .card {
   width: 350px;
   text-align: center;
-  background-color: #ffffe6;
+  background-color: #ecece5;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
+  border-radius: 20px;
 
   > .card-img > img {
     width: 90px;
@@ -126,4 +130,60 @@ header {
 
 ::-webkit-scrollbar-thumb {
   background-color: #ffffff;
+}
+
+
+footer{
+  padding: 10px;
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(113, 107, 107);
+  gap: 150px;
+}
+
+#list{
+
+  >ul{
+    list-style-type: none;
+
+    a{
+      text-decoration: none;
+      color: rgb(176, 255, 224);
+    }
+  }
+  
+}
+
+#transitionImg {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  animation: change 10s infinite;
+}
+
+@keyframes change {
+  0% {
+    background-image: url('store.png');
+  }
+  16.67% {
+    background-image: url('cart.png');
+  }
+  33.33% {
+    background-image: url('tshirt.png');
+  }
+  50% {
+    background-image: url('clothes.png');
+  }
+  66.67% {
+    background-image: url('electronics.png');
+  }
+  83.33% {
+    background-image: url('necklace.png'); /* Add your sixth image here */
+  }
+  100% {
+    background-image: url('store.png');
+  }
 }

@@ -1,122 +1,93 @@
 let productPage = document.getElementById("productPage");
-let baseUrl = 'https://fakestoreapi.com/products';
-let loginBtn = document.getElementById("loginBtn");
-let categoryBtn = document.getElementById("category");
-let priceBtn = document.getElementById("priceRange");
-let searchBar = document.getElementById("searchDiv");
+        let baseUrl = 'https://fakestoreapi.com/products';
+        let categoryBtn = document.getElementById("category");
+        let priceBtn = document.getElementById("priceRange");
 
-let res;
+        fetch(baseUrl)
+            .then(res => res.json())
+            .then(data => {
+                appendData(data);
+                categoryBtn.addEventListener('change', () => filterProducts(data));
+                priceBtn.addEventListener('change', () => filterProducts(data));
+            })
+            .catch(err => {
+                console.log("err:", err);
+            });
 
-fetch(baseUrl)
-.then(res => res.json())
-.then(data => {
-    appendData(data);
-    categoryBtn.addEventListener('change', () => filterByCategory(data));
-    priceBtn.addEventListener('change', () => filterByPrice(data));
-})
+        function appendData(items) {
+            productPage.innerHTML = "";
 
-.catch(function (err) {
-    console.log("err:",err);
-});
+            items.forEach(item => {
+                let card = document.createElement("div");
+                card.className = "card";
+                card.dataset.id = item.id;
 
-function appendData(items){
-    let categoryData = [];
-    productPage.innerHTML = "";
+                let cardImg = document.createElement("div");
+                cardImg.className = "card-img";
 
-    items.forEach(item => {
+                let img = document.createElement("img");
+                img.src = item.image;
+                img.alt = "product";
 
-    let card = document.createElement("div");
-    card.className = "card";
-    card.dataset.id = item.id;
-    card.style.borderRadius = "20px";
+                cardImg.append(img);
 
-    let cardImg = document.createElement("div");
-    cardImg.className = "card-img";
+                let cardBody = document.createElement("div");
+                cardBody.className = "card-body";
 
-    let img = document.createElement("img");
-    img.src = item.image;
-    img.alt = "product";
-    
+                let title = document.createElement("h5");
+                title.className = "title";
 
-    cardImg.append(img);
+                let productText = document.createElement("span");
+                productText.className = "productText";
+                productText.innerText = "Product:";
+                productText.style.color = "DarkTurquoise";
 
-    let cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+                title.appendChild(productText);
+                title.appendChild(document.createTextNode(` ${item.title}`));
 
-    let title = document.createElement("h5");
-    title.className = "title";
+                let info = document.createElement("p");
+                info.className = "description";
 
-    let productText = document.createElement("span");
-    productText.className = "productText";
-    productText.innerText = "Product:";
-    productText.style.color = "DarkTurquoise";
+                let infoText = document.createElement("span");
+                infoText.innerText = "Description:";
+                infoText.style.color = "cadetBlue";
 
-    title.appendChild(productText);
-    
-    title.appendChild(document.createTextNode(` ${item.title}`));
+                info.appendChild(infoText);
+                info.appendChild(document.createTextNode(` ${item.description}`));
 
-    let info = document.createElement("p");
-    info.className = "description";    
+                let price = document.createElement("h5");
+                price.className = "price";
+                price.innerText = `Price: $ ${item.price}`;
 
-    let infoText = document.createElement("span");
-    infoText.innerText="Description:"
-    infoText.style.color = "cadetBlue";
+                let category = document.createElement("h5");
+                category.className = "category";
+                category.innerText = `Category: ${item.category}`;
 
-    info.appendChild(infoText);
+                cardBody.append(title, info, price, category);
+                card.append(cardImg, cardBody);
 
-    info.appendChild(document.createTextNode(` ${item.description}`));
+                productPage.appendChild(card);
+            });
+        }
 
-    let price = document.createElement("h5");
-    price.className = "price";
-    price.innerText = `Price: $ ${item.price}`;
-
-    let category = document.createElement("h5");
-    category.className = "category";
-    category.innerText = `Category: ${item.category}`;
-
-    cardBody.append(title,info,price,category);
-
-    card.append(cardImg, cardBody);
-
-    productPage.appendChild(card);
-    });
-}
-
-
-function filterByPrice(items) {
-    let selectedValue = priceBtn.value;
-    console.log(`Selected Price is: ${selectedValue}`);
-    let filteredItems;
-
-    if(selectedValue === ""){
-        filteredItems = items;
-    } else if(selectedValue === "300") {
-        filteredItems = items.filter(item => item.price >= 200);
-    } else {
-        let maxPrice = parseFloat(selectedValue);
-        let minPrice = maxPrice === 50 ? 0 : maxPrice / 2;
-        filteredItems = items.filter(item => item.price >= minPrice && item.price < maxPrice);
-    }
-
-    appendData(filteredItems);
-}
-
-function filterByCategory(items){
-    let selectedCategory = categoryBtn.value;
-    console.log(`Selected Category is: ${selectedCategory}`);
-    let filteredItems;
-
-    if(selectedCategory === ""){
-        filteredItems = items;
-    } else if(selectedCategory === "men's clothing") {
-        filteredItems = items.filter(item => item.category === "men's clothing");
-    } else if(selectedCategory === "women's clothing") {
-        filteredItems = items.filter(item => item.category === "women's clothing");
-    } else if(selectedCategory === "electronics") {
-        filteredItems = items.filter(item => item.category === "electronics");
-    } else if(selectedCategory === "jewelery") {
-        filteredItems = items.filter(item => item.category === "jewelery");
-    }
-
-    appendData(filteredItems);
-}
+        function filterProducts(items) {
+            let selectedCategory = categoryBtn.value;
+            let selectedPriceRange = priceBtn.value;
+        
+            let filteredItems = items;
+        
+            if (selectedCategory !== "") {
+                filteredItems = filteredItems.filter(item => item.category === selectedCategory);
+            }
+        
+            if (selectedPriceRange !== "") {
+                if (selectedPriceRange === "200-above") {
+                    filteredItems = filteredItems.filter(item => item.price >= 200);
+                } else {
+                    let [minPrice, maxPrice] = selectedPriceRange.split('-').map(parseFloat);
+                    filteredItems = filteredItems.filter(item => item.price >= minPrice && item.price < (maxPrice || Infinity));
+                }
+            }
+        
+            appendData(filteredItems);
+        }
