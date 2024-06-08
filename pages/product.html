@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/sources/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
     <header id="headerSection">
-        <nav id="navSection">
-            <img src="/sources/download.jpg" alt="logo" />
-          <ul>
-            <li><a href="/pages/index.html">Home</a></li>
-            <li><a href="/pages/product.html">Product</a></li>
-            <li><a href="/pages/aboutus.html">About Us</a></li>
-          </ul>
-  
-          <button id="loginBtn">Login / Sign in</button>
-        </nav>
-      </header>
+      <nav id="navSection">
+        <img src="/sources/download.jpg" alt="logo" />
+        <ul>
+          <li><a href="/pages/index.html">Home</a></li>
+          <li><a href="/pages/product.html">Product</a></li>
+          <li><a href="/pages/aboutus.html">About Us</a></li>
+        </ul>
 
-      <div id="productPage" class="productPage"></div>
-</body>
+        <button id="loginBtn">Login / Sign in</button>
+      </nav>
+    </header>
+
+    <div id="parentMar">
+      <div id="marquee">
+        <marquee behavior="" scrolldelay="55" direction="" truespeed
+          >Find everything you need in one convenient place.</marquee
+        >
+      </div>
+
+      <div id="searchDiv">
+        <select id="category">
+          <option value="">Category</option>
+          <option value="men's clothing">Mens</option>
+          <option value="women's clothing">Women</option>
+          <option value="jewelery"> Jewelery</option>
+          <option value="electronics">Electronics</option>
+        </select>
+
+        <select id="priceRange">
+          <option value="">Price Range</option>
+          <option value="50">0 - 50</option>
+          <option value="100">50 - 100</option>
+          <option value="200">100 - 200</option>
+          <option value="300">200 & above</option>
+        </select>
+      </div>
+
+
+      
+    </div>
+
+    <div id="productPage" class="productPage"></div>
+  </body>
 </html>
-<script src="/js/product.js"></script>
+<script src="../js/product.js"></script>
