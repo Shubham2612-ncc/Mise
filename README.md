@@ -6,3 +6,4 @@ Example: The selected category is "Men" and the selected price range is "0-50"
 
 Then the data is:-
 
+![alt text](<Screenshot 2024-06-08 215422.png>)
