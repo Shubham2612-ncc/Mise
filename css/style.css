@@ -38,6 +38,19 @@ header {
   background-color: darkgrey;
   color: red;
   font-weight: 600;
+  margin-left: 100px;
+  border-radius: 15px;
+}
+
+#signinBtn {
+  width: 130px;
+  height: 50px;
+  padding: 5px;
+  margin: 25px;
+  margin-right: -200px;
+  background-color: darkgrey;
+  color: red;
+  font-weight: 600;
   border-radius: 15px;
 }
 
@@ -179,13 +192,146 @@ footer {
     background-image: url("electronics.png");
   }
   83.33% {
-    background-image: url("necklace.png"); /* Add your sixth image here */
+    background-image: url("necklace.png");
   }
   100% {
     background-image: url("store.png");
   }
 }
 
-.card-img-top {
+.card {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  color: #db3a34;
+  text-align: center;
+  background-color: #edebe0;
+}
+
+#logContainer {
+  width: 350px;
+  background-color: #b4cafd;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 20px 0px 15px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: cursive;
+
+  h2 {
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: -10px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  form label {
+    margin: 10px 10px;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  form input {
+    width: 80%;
+    display: block;
+    padding: 6px;
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+  }
+
+  #submitBtn {
+    width: 100px;
+    height: 30px;
+    color: #ffca80;
+    font-weight: bold;
+    font-size: larger;
+    margin: 10px 10px 10px 120px;
+    background-color: #0b3b95;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  span {
+    margin-left: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: rgb(27, 65, 233);
+  }
+}
+
+#signinContainer {
+  width: 350px;
+  background-color: #b4cafd;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 20px 0px 15px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: cursive;
+
+  h2 {
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: -10px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  form label {
+    margin: 10px 10px;
+    font-weight: 700;
+  }
+
+  form input {
+    width: 80%;
+    display: block;
+    padding: 6px;
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+  }
+
+  #submitBtn {
+    width: 100px;
+    height: 30px;
+    color: #ffca80;
+    font-weight: bold;
+    font-size: larger;
+    margin: 10px 10px 10px 120px;
+    background-color: #0b3b95;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  #linkElement {
+    width: 500px;
+  }
+
+  span {
+    margin-left: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: rgb(88, 46, 242);
+  }
+
+  #gender, #select{
+    font-weight: 700;
+    margin: 10px;
+  }
 }
