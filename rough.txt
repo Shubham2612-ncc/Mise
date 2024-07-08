@@ -1,0 +1,40 @@
+<div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../css/cart.png" class="d-block w-100" alt="..." />
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              pariatur tempora sapiente expedita officiis asperiores et
+              voluptatem, vel fugit explicabo quaerat? Laudantium quam optio,
+              nam quaerat beatae quisquam incidunt nisi!
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../css/clothes.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="../css/electronics.png" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>

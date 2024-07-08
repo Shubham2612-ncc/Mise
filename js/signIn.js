@@ -97,7 +97,7 @@ function signinForm() {
   let submitBtn = document.createElement("button");
   submitBtn.id = "submitBtn";
   submitBtn.type = "submit";
-  submitBtn.innerText = "Sign In";
+  submitBtn.innerText = "Sign Up";
 
   let logLink = document.createElement("a");
   logLink.id = "signIn";

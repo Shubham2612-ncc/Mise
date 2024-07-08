@@ -40,7 +40,8 @@ let productPage = document.getElementById("productPage");
                 let productText = document.createElement("span");
                 productText.className = "productText";
                 productText.innerText = "Product:";
-                productText.style.color = "DarkTurquoise";
+                productText.style.color = "black";
+                productText.style.fontWeight = "1000";
 
                 title.appendChild(productText);
                 title.appendChild(document.createTextNode(` ${item.title}`));
@@ -50,7 +51,9 @@ let productPage = document.getElementById("productPage");
 
                 let infoText = document.createElement("span");
                 infoText.innerText = "Description:";
-                infoText.style.color = "cadetBlue";
+                infoText.style.color = "black";
+                infoText.style.fontWeight = "1000";
+
 
                 info.appendChild(infoText);
                 info.appendChild(document.createTextNode(` ${item.description}`));
