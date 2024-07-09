@@ -35,6 +35,10 @@ header {
   }
 }
 
+#headerSection > nav > span {
+  display: none;
+}
+
 #loginBtn {
   width: 130px;
   height: 50px;
@@ -454,15 +458,34 @@ footer {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px) and (min-width: 200px) {
+  #headerSection {
+    position: fixed;
+    background-color: rgb(34, 37, 49);
+    width: 100%;
+    height: 100vh;
+    max-width: 450px;
+    top: 0;
+    right: -450px;
+    transition: right 0.3s ease;
+  }
+
   header > nav > ul {
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   header > nav > img {
     width: 120px;
     height: 70px;
+  }
+
+  #navSection > span {
+    display: block;
+    cursor: pointer;
   }
 
   #loginBtn {
@@ -484,3 +507,4 @@ footer {
     font-size: medium;
   }
 }
+
