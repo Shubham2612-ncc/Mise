@@ -18,3 +18,9 @@ Anyone can click on the below link open our website on their system as we had us
 link:- https://mise-eshop.vercel.app/
 
 Anyone can see the source code on their system by clone our website using git command:- "git clone" & copy the repository link:- "https://github.com/Shubham2612-ncc/Mise.git"
+
+References:-
+YouTube
+Chat Gpt
+SwiperJs
+MDN Document
